@@ -15,7 +15,7 @@ export const wealthAgent = new Agent({
 
   `,
   model: "google/gemini-2.5-flash",
-  id: "wealth-agent",
+  id: "wealthAgent",
   memory: new Memory({
     storage: new LibSQLStore({
       url: "file:../mastra.db", // path is relative to the .mastra/output directory

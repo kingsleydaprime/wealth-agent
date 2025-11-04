@@ -3,7 +3,7 @@ import { randomUUID } from "crypto";
 import { z } from "zod";
 
 const financeInput = z.object({
-  userId: z.string(),
+  // userId: z.string(),
   finances: z.object({
     income: z.number(),
     expenses: z.number(),
@@ -38,8 +38,8 @@ export const wealthApiRoute = registerApiRoute("a2a/agent/:agentId", {
           400,
         );
       }
-      const validated = financeInput.parse(body);
-      const agent = mastra.getAgent("wealth-agent");
+      // const validated = financeInput.parse(body);
+      const agent = mastra.getAgent(agentId);
       if (!agent) {
         return c.json(
           {
@@ -120,7 +120,7 @@ export const wealthApiRoute = registerApiRoute("a2a/agent/:agentId", {
           taskId: taskId || randomUUID(),
         },
       ];
-      const result = await workflow.execute(validated);
+      // const result = await workflow.execute(validated);
 
       // Return A2A-compliant response
       return c.json({
