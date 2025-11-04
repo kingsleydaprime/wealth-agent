@@ -1,5 +1,7 @@
 import { Agent } from "@mastra/core/agent";
 import { cryptoTool, stockTool } from "../tools/fintech-tools";
+import { Memory } from "@mastra/memory";
+import { LibSQLStore } from "@mastra/libsql";
 
 export const wealthAgent = new Agent({
   name: "Wealth Advisor",
@@ -10,9 +12,14 @@ export const wealthAgent = new Agent({
     - Use cryptoTool for BTC/ETH prices; stockTool for NGX/AAPL.
     - Project ROI conservatively: 15-20% ethical gains.
     - End: "Commit today or stagnate. (James 1:22)"
-    Model: "openai/gpt-4o".
+
   `,
-  model: "openai/gpt-4o",
+  model: "google/gemini-2.5-flash",
   id: "wealth-agent",
+  memory: new Memory({
+    storage: new LibSQLStore({
+      url: "file:../mastra.db", // path is relative to the .mastra/output directory
+    }),
+  }),
   tools: { cryptoTool, stockTool },
 });
