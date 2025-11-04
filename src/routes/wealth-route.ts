@@ -53,7 +53,7 @@ export const wealthApiRoute = registerApiRoute("a2a/agent/:agentId", {
           404,
         );
       }
-      const workflow = mastra.getWorkflow("wealth-workflow");
+      const workflow = mastra.getWorkflow("wealthWorkflow");
       if (!workflow) return c.json({ error: "Workflow unavailable" }, 404);
       // Extract messages from params
       const { message, messages, contextId, taskId, metadata } = params || {};
