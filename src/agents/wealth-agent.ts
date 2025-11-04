@@ -13,5 +13,6 @@ export const wealthAgent = new Agent({
     Model: "openai/gpt-4o".
   `,
   model: "openai/gpt-4o",
+  id: "wealth-agent",
   tools: { cryptoTool, stockTool },
 });

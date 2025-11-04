@@ -12,7 +12,7 @@ const financeInput = z.object({
   }),
 });
 
-export const wealthApiRoute = registerApiRoute("a2a/wealth/plan", {
+export const wealthApiRoute = registerApiRoute("a2a/agent/wealth-agent", {
   method: "POST",
   handler: async (c) => {
     try {
