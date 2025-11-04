@@ -2,15 +2,15 @@ import { registerApiRoute } from "@mastra/core/server";
 import { randomUUID } from "crypto";
 import { z } from "zod";
 
-const financeInput = z.object({
-  // userId: z.string(),
-  finances: z.object({
-    income: z.number(),
-    expenses: z.number(),
-    savings: z.number(),
-    goals: z.string(),
-  }),
-});
+// const financeInput = z.object({
+//   userId: z.string(),
+//   finances: z.object({
+//     income: z.number(),
+//     expenses: z.number(),
+//     savings: z.number(),
+//     goals: z.string(),
+//   }),
+// });
 
 export const wealthApiRoute = registerApiRoute("a2a/agent/:agentId", {
   method: "POST",
