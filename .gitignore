@@ -1,0 +1,9 @@
+.mastra
+.mastra/
+.env.*
+.env
+!.env.example
+node_modules/
+mastra.db
+mastra.db-shm
+mastra.db-wal
